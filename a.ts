@@ -1,6 +1,6 @@
 
 // 자바스크립트
-function plus1(a, b){
+function plus1(a: any, b: any){
     return a+b;
 }
 
