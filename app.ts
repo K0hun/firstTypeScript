@@ -2,7 +2,7 @@ function logName(name: string) {
   console.log(name);
 }
 
-logName("younghun");
+// logName("younghun");
 
 let student = {
   name: "john",
@@ -33,13 +33,62 @@ function Plus(a: number, b: number): void {
   // return a + b;
 }
 
-function getInfo(id: number): {
+interface Student {
   stdId: number;
-  stdName: string;
-  age: number;
-  gender: string;
-  course: string;
-  complete: boolean;
-} {
-    return null;
+  stdName?: string;
+  age?: number;
+  gender?: string;
+  course?: string;
+  complete?: boolean;
+  setName?: (name: string) => void;
+  // == setName(name: string): void;
+  getName?: () => string;
 }
+
+class MyStudent implements Student {
+    stdId = 91011;
+    stdName = 'park';
+    age = 30;
+    gender = 'male';
+    course = 'node.js';
+    complete = true;
+
+    setName(name: string): void{
+        this.stdName = name;
+        console.log('이름 설정 : ', this.stdName);
+    }
+    getName(): string{
+        return this.stdName;
+    }
+}
+
+const myInstance = new MyStudent();
+myInstance.setName('엘리스');
+
+function getInfo(id: number): Student {
+  return {
+    stdId : id,
+    stdName : 'lee',
+    age : 20,
+    gender : 'female',
+    course: 'javascript',
+    complete : true
+  };
+}
+
+// console.log('getInfo(1) = ', getInfo(1));
+
+function setInfo(student : Student): void{
+    console.log('student = ', student);
+}
+
+let std = {
+    stdId : 91011,
+    stdName : 'park',
+    age : 30,
+    gender : 'male',
+    course: 'node.js',
+    complete : true
+  };
+
+// setInfo(std);

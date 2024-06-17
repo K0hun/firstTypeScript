@@ -1,7 +1,7 @@
 function logName(name) {
     console.log(name);
 }
-logName("younghun");
+// logName("younghun");
 var student = {
     name: "john",
     course: "typescript",
@@ -27,6 +27,46 @@ let stdId: number = '1111';
 function Plus(a, b) {
     // return a + b;
 }
+var MyStudent = /** @class */ (function () {
+    function MyStudent() {
+        this.stdId = 91011;
+        this.stdName = 'park';
+        this.age = 30;
+        this.gender = 'male';
+        this.course = 'node.js';
+        this.complete = true;
+    }
+    MyStudent.prototype.setName = function (name) {
+        this.stdName = name;
+        console.log('이름 설정 : ', this.stdName);
+    };
+    MyStudent.prototype.getName = function () {
+        return this.stdName;
+    };
+    return MyStudent;
+}());
+var myInstance = new MyStudent();
+myInstance.setName('엘리스');
 function getInfo(id) {
-    return null;
+    return {
+        stdId: id,
+        stdName: 'lee',
+        age: 20,
+        gender: 'female',
+        course: 'javascript',
+        complete: true
+    };
 }
+// console.log('getInfo(1) = ', getInfo(1));
+function setInfo(student) {
+    console.log('student = ', student);
+}
+var std = {
+    stdId: 91011,
+    stdName: 'park',
+    age: 30,
+    gender: 'male',
+    course: 'node.js',
+    complete: true
+};
+// setInfo(std);
