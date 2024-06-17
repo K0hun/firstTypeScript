@@ -33,11 +33,19 @@ function Plus(a: number, b: number): void {
   // return a + b;
 }
 
+//열거형 : 사용자 정의 타입
+enum GenderType{
+    Male='male',
+    Female='female',
+    GenderNeutral = 'neutral'
+}
+
+// 인터페이스
 interface Student {
   stdId: number;
   stdName?: string;
   age?: number;
-  gender?: string;
+  gender?: GenderType;
   course?: string;
   complete?: boolean;
   setName?: (name: string) => void;
@@ -45,11 +53,12 @@ interface Student {
   getName?: () => string;
 }
 
+// 인터페이스를 사용한 클래스 생성
 class MyStudent implements Student {
     stdId = 91011;
     stdName = 'park';
     age = 30;
-    gender = 'male';
+    gender = GenderType.Male;
     course = 'node.js';
     complete = true;
 
@@ -70,7 +79,7 @@ function getInfo(id: number): Student {
     stdId : id,
     stdName : 'lee',
     age : 20,
-    gender : 'female',
+    gender : GenderType.Female,
     course: 'javascript',
     complete : true
   };

@@ -27,12 +27,20 @@ let stdId: number = '1111';
 function Plus(a, b) {
     // return a + b;
 }
+//열거형 : 사용자 정의 타입
+var GenderType;
+(function (GenderType) {
+    GenderType["Male"] = "male";
+    GenderType["Female"] = "female";
+    GenderType["GenderNeutral"] = "neutral";
+})(GenderType || (GenderType = {}));
+// 인터페이스를 사용한 클래스 생성
 var MyStudent = /** @class */ (function () {
     function MyStudent() {
         this.stdId = 91011;
         this.stdName = 'park';
         this.age = 30;
-        this.gender = 'male';
+        this.gender = GenderType.Male;
         this.course = 'node.js';
         this.complete = true;
     }
@@ -52,7 +60,7 @@ function getInfo(id) {
         stdId: id,
         stdName: 'lee',
         age: 20,
-        gender: 'female',
+        gender: GenderType.Female,
         course: 'javascript',
         complete: true
     };
