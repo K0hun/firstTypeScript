@@ -54,7 +54,7 @@ var MyStudent = /** @class */ (function () {
     return MyStudent;
 }());
 var myInstance = new MyStudent();
-myInstance.setName('엘리스');
+// myInstance.setName('엘리스');
 function getInfo(id) {
     return {
         stdId: id,
@@ -82,3 +82,19 @@ var user = {
     name: 'john',
     age: 25
 };
+var numStr = 100;
+var item;
+function convertToString(val) {
+    if (typeof val === 'string') {
+        item = 0;
+    }
+    else {
+        item = val;
+    }
+    return String(val);
+}
+function convertToNumber(val) {
+    return Number(val);
+}
+// console.log(convertToString(numStr));
+// console.log(convertToNumber(numStr));
