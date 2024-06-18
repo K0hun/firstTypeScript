@@ -12,4 +12,5 @@ var Employee = /** @class */ (function () {
 }());
 ;
 var employee1 = new Employee('kim', 20, '개발자');
+// employee1.empName = 'lee' // 접근지정 제한
 employee1.printEmp();
